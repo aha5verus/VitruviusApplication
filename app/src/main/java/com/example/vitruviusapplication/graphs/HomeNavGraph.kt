@@ -1,5 +1,7 @@
 package com.example.vitruviusapplication.graphs
 
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -8,7 +10,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.vitruviusapplication.BottomBarScreen
 import com.example.vitruviusapplication.screens.ScreenContent
+import com.example.vitruviusapplication.screens.home.HomeContent
+import com.example.vitruviusapplication.screens.home.sand.SandCalcScreen
 
+@ExperimentalMaterialApi
+@ExperimentalFoundationApi
 @Composable
 fun HomeNavGraph(navController: NavHostController) {
     NavHost(
@@ -17,10 +23,9 @@ fun HomeNavGraph(navController: NavHostController) {
         startDestination = BottomBarScreen.Home.route
     ) {
         composable(route = BottomBarScreen.Home.route) {
-            ScreenContent(
-                name = BottomBarScreen.Home.route,
+            HomeContent(
                 onClick = {
-                    navController.navigate(Graph.HOME_DETAILS)
+                    navController.navigate(Graph.HOME_SAND)
                 }
             )
         }
@@ -40,20 +45,25 @@ fun HomeNavGraph(navController: NavHostController) {
     }
 }
 
+@ExperimentalMaterialApi
+@ExperimentalFoundationApi
 fun NavGraphBuilder.detailsNavGraph(navController: NavHostController) {
     navigation(
-        route = Graph.HOME_DETAILS,
-        startDestination = DetailsScreen.Information.route
+        route = Graph.HOME_SAND,
+        startDestination = SandScreen.SandCalcList.route
     ) {
-        composable(route = DetailsScreen.Information.route) {
-            ScreenContent(name = DetailsScreen.Information.route) {
-                navController.navigate(DetailsScreen.Overview.route)
+        composable(route = SandScreen.SandCalcList.route) {
+//            ScreenContent(name = SandScreen.SandCalcList.route) {
+//                navController.navigate(SandScreen.SandCalc.route)
+//            }
+            SandCalcScreen(name = SandScreen.SandCalcList.route) {
+                navController.navigate(SandScreen.SandCalc.route)
             }
         }
-        composable(route = DetailsScreen.Overview.route) {
-            ScreenContent(name = DetailsScreen.Overview.route) {
+        composable(route = SandScreen.SandCalc.route) {
+            ScreenContent(name = SandScreen.SandCalc.route) {
                 navController.popBackStack(
-                    route = DetailsScreen.Information.route,
+                    route = SandScreen.SandCalcList.route,
                     inclusive = false
                 )
             }
@@ -61,7 +71,7 @@ fun NavGraphBuilder.detailsNavGraph(navController: NavHostController) {
     }
 }
 
-sealed class DetailsScreen(val route: String) {
-    object Information : DetailsScreen(route = "INFORMATION")
-    object Overview : DetailsScreen(route = "OVERVIEW")
+sealed class SandScreen(val route: String) {
+    object SandCalcList : SandScreen(route = "INFORMATION")
+    object SandCalc : SandScreen(route = "OVERVIEW")
 }
