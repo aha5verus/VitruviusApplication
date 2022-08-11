@@ -41,7 +41,6 @@ fun MaterialCard(
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
 fun MaterialCardPreview() {
