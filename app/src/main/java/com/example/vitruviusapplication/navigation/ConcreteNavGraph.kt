@@ -12,8 +12,8 @@ import com.example.vitruviusapplication.ui.screens.home.concrete.ConcreteTestsSc
 import com.example.vitruviusapplication.ui.screens.home.concrete.tests.density.DensityScreen
 import com.example.vitruviusapplication.ui.screens.home.concrete.tests.strength.StrengthScreen
 import com.example.vitruviusapplication.ui.screens.home.concrete.tests.strength.StrengthViewModel
-import com.google.accompanist.navigation.animation.navigation
 import com.google.accompanist.navigation.animation.composable
+import com.google.accompanist.navigation.animation.navigation
 
 
 @ExperimentalAnimationApi
@@ -91,8 +91,8 @@ fun NavGraphBuilder.concreteNavGraph(
             }
         ){
             StrengthScreen(
-                strengthViewModel = strengthViewModel,
-                navController = navController
+                navController = navController,
+                strengthViewModel = strengthViewModel
             )
         }
         composable(

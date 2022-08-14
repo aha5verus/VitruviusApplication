@@ -34,9 +34,12 @@ fun SettingsScreen(
         color = VitruviusTheme.colors.secondaryBackground,
     ) {
         Column(
-            Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize()
         ) {
-            TestAppBar(title = "Настройки", navController = navController)
+            TestAppBar(
+                title = "Настройки",
+                navController = navController
+            )
 
             Row(
                 modifier = Modifier.padding(VitruviusTheme.shapes.padding)

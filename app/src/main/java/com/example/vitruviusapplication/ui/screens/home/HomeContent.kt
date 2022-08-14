@@ -3,7 +3,6 @@ package com.example.vitruviusapplication.ui.screens.home
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.FloatingActionButtonDefaults
@@ -64,7 +63,6 @@ fun HomeContent(
                 onClick = { onSettingsClick() },
                 backgroundColor = VitruviusTheme.colors.tintColor,
                 contentColor = VitruviusTheme.colors.secondaryText,
-                shape = RoundedCornerShape(12.dp),
                 elevation = FloatingActionButtonDefaults.elevation(6.dp)
 
             ) {

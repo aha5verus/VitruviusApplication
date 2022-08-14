@@ -31,14 +31,13 @@ fun StrengthScreen(
     )
 }
 
-
-@ExperimentalMaterialApi
-@Preview
-@Composable
-fun ConcreteStrengthScreenPreview(
-) {
-    StrengthScreen(
-        rememberNavController(),
-        strengthViewModel = StrengthViewModel()
-    )
-}
+//
+//@ExperimentalMaterialApi
+//@Preview
+//@Composable
+//fun ConcreteStrengthScreenPreview(
+//) {
+//    StrengthScreen(
+//        rememberNavController()
+//    )
+//}

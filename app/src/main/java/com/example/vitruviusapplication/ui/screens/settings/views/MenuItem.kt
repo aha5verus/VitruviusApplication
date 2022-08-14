@@ -35,8 +35,8 @@ fun MenuItem(
     Column {
         Box(
             modifier = Modifier
-                .background(VitruviusTheme.colors.secondaryBackground)
                 .fillMaxWidth()
+                .background(VitruviusTheme.colors.secondaryBackground)
         ) {
             Row(
                 Modifier

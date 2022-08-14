@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VitruviusApplication</string>
+    <string name="app_name">Vitruvius</string>
     <string name="action_dark_theme_enable">Включить темную тему</string>
     <string name="title_settings">Настройки</string>
     <string name="title_font_size_small">Маленький</string>
